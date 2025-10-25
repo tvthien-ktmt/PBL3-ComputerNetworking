@@ -1,0 +1,13 @@
+[Unit]
+Description=Firewall Auto Block DoS/DDoS Protection
+After=network.target
+
+[Service]
+Type=simple
+User=root
+ExecStart=/usr/bin/python3 /opt/firewall/auto_block.py
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
